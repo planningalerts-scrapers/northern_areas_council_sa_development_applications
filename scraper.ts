@@ -749,7 +749,7 @@ function parseApplicationElements(elements: Element[], startElement: Element, in
     return {
         applicationNumber: applicationNumber,
         address: address,
-        description: ((description === "") ? "No Description Provided" : description),
+        description: ((description !== undefined && description.trim() !== "") ? description : "No Description Provided"),
         informationUrl: informationUrl,
         commentUrl: CommentUrl,
         scrapeDate: moment().format("YYYY-MM-DD"),
